@@ -1,4 +1,4 @@
-package pl.jsystems.qaunit.test;
+package pl.jsystems.qajunit;
 
 public class GamePlay {
     public static String play(int number) {
