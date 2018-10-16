@@ -12,6 +12,7 @@
     <artifactId>qa-frontend</artifactId>
 
 <dependencies>
+
     <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
     <dependency>
         <groupId>org.seleniumhq.selenium</groupId>
@@ -23,6 +24,30 @@
         <groupId>io.github.bonigarcia</groupId>
         <artifactId>webdrivermanager</artifactId>
     </dependency>
+
+    <dependency>
+        <groupId>org.junit.jupiter</groupId>
+        <artifactId>junit-jupiter-api</artifactId>
+        <scope>test</scope>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.hamcrest/hamcrest-all -->
+    <dependency>
+        <groupId>org.hamcrest</groupId>
+        <artifactId>hamcrest-all</artifactId>
+        <scope>test</scope>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/com.google.truth/truth -->
+    <dependency>
+        <groupId>com.google.truth</groupId>
+        <artifactId>truth</artifactId>
+        <scope>test</scope>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/com.typesafe/config -->
+    <dependency>
+        <groupId>com.typesafe</groupId>
+        <artifactId>config</artifactId>
+    </dependency>
+
 </dependencies>
 
 </project>
