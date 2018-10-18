@@ -18,4 +18,10 @@ public class Specification {
                 .build();
     }
 
+    public static RequestSpecification fakeAzureSpecBuilder() {
+        return new RequestSpecBuilder()
+                .setContentType(ContentType.JSON)
+                .setBaseUri("http://fakerestapi.azurewebsites.net")
+                .build();
+    }
 }
