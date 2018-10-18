@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = "src/test/resources",
-        glue = "classpath:pl.jsystems.qa.frontend.cucumber.steps",
+        glue = "classpath:pl.jsystems.qa.frontend.cucumber",
         plugin = {"html:target/cucumber-html-report", "rerun:target/rerun.txt"},
         tags = {
                "@window",

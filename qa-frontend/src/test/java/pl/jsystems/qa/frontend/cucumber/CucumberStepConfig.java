@@ -1,18 +1,17 @@
-package pl.jsystems.qa.frontend;
+package pl.jsystems.qa.frontend.cucumber;
 
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import pl.jsystems.qa.frontend.Configuration;
 
 import java.util.concurrent.TimeUnit;
 
@@ -68,9 +67,44 @@ public class CucumberStepConfig {
         String verificationErrorString = verificationErrors.toString();
         if (!"".equals(verificationErrorString)) {
             fail(verificationErrorString);
-            driver.quit();
-            driver = null;
 //            driver.close();
         }
+            driver.quit();
+            driver = null;
+    }
+
+    public static class FrontConfig {
+
+        public WebDriver driver;
+
+        @BeforeAll
+        public static void setupAll() {
+            WebDriverManager.chromedriver().setup();
+        }
+
+    //        ChromeOptions chromeOptions= new ChromeOptions();
+    //        chromeOptions.addArguments("--start-maximized");
+
+    //        WebDriver driver = new ChromeDriver(chromeOptions);
+        @BeforeEach
+        public void setUp () {
+            if (driver == null) {
+                driver = new ChromeDriver();
+
+            }
+            driver.manage().window().maximize();
+            driver.manage().deleteAllCookies();
+            driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+            driver.get(Configuration.WORDPRESS_URL);
+
+        }
+
+    //    @AfterEach
+    //    public void teareDown() {
+    //        driver.quit();
+    //        driver = null;
+
+    //    }
     }
 }

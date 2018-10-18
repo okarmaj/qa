@@ -2,7 +2,7 @@ package pl.jsystems.qa.frontend.factory.test;
 
 import org.junit.jupiter.api.Test;
 import pl.jsystems.qa.frontend.Configuration;
-import pl.jsystems.qa.frontend.factory.FrontConfig;
+import pl.jsystems.qa.frontend.cucumber.CucumberStepConfig;
 import pl.jsystems.qa.frontend.factory.page.*;
 
 
@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class FrontEndTest extends FrontConfig {
+public class FrontEndTest extends CucumberStepConfig.FrontConfig {
 
 
 
