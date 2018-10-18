@@ -169,11 +169,11 @@ public class ApiTest {
 
 
 
-    @Test
-    public void jdbiTest() {
-        assertThat(UserJdbiService.getTestUser(1L).getId(), is(1L));
-
-    }
+//    @Test
+//    public void jdbiTest() {
+//        assertThat(UserJdbiService.getTestUser(1L).getId(), is(1L));
+//
+//    }
 
 
 }
